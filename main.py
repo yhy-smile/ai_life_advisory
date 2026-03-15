@@ -1,9 +1,11 @@
 import streamlit as st
 import dashscope
 from dashscope import Generation
+import streamlit as st
+import dashscope
 
 # 设置你的API Key
-dashscope.api_key = "sk-a6d3dd278db24255a26b915418265dd6"
+dashscope.api_key = st.secrets["DASHSCOPE_API_KEY"]
 
 st.set_page_config(page_title="AI人生智囊团", page_icon="🧠")
 
