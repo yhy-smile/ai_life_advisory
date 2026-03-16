@@ -155,3 +155,64 @@ if st.button("生成完整人生决策报告"):
             st.subheader("📊 人生决策报告")
 
             st.markdown(report)
+            
+# ===============================
+# 人生评分
+# ===============================
+
+if st.button("生成人生评分"):
+
+    if question == "":
+        st.warning("请先输入问题")
+
+    else:
+
+        with st.spinner("AI正在评估人生状态..."):
+
+            score_prompt = f"""
+你是一位人生发展评估专家。
+
+根据用户信息，为用户生成【人生评分报告】。
+
+用户信息：
+
+年龄：{age}
+职业：{job}
+存款：{money}
+
+用户问题：
+{question}
+
+输出格式：
+
+# 人生评分报告
+
+## 综合评分
+人生综合评分：XX / 100
+
+## 评分维度
+
+职业发展：XX / 100
+财务状况：XX / 100
+成长潜力：XX / 100
+心理状态：XX / 100
+生活自由度：XX / 100
+
+## 评分解释
+
+解释每个评分原因。
+
+## 提升建议
+
+给出3条建议。
+
+使用 Markdown 格式输出。
+"""
+
+            score_result = ask_qwen(score_prompt)
+
+            st.divider()
+
+            st.subheader("📊 人生评分报告")
+
+            st.markdown(score_result)
