@@ -9,23 +9,6 @@ st.set_page_config(page_title="AI人生智囊团", page_icon="🧠")
 
 st.title("🧠 AI人生智囊团")
 
-# 统计当前访问用户数
-if "user_count" not in st.session_state:
-    st.session_state.user_count = 0  # 初始化用户计数
-
-# 每次刷新时增加计数
-st.session_state.user_count += 1
-
-# 统计当前访问用户数
-if "user_count" not in st.session_state:
-    st.session_state.user_count = 0  # 初始化用户计数
-
-# 每次刷新时增加计数
-st.session_state.user_count += 1
-
-# 显示当前用户数
-st.sidebar.write(f"当前访问人数：{st.session_state.user_count}")
-
 st.write("输入你的人生问题，获得多位导师建议 + 人生决策报告")
 
 st.divider()
